@@ -1,0 +1,52 @@
+{% extends 'base_manager.html' %}
+
+{% block title %}Manager Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Product Inventory</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Product Name</th>
+                <th>Manufacture Date</th>
+                <th>Expiry Date</th>
+                <th>Price per Unit</th>
+                <th>Stocks</th>
+                <th>Unit</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.Product_ID }}</td>
+                <td>{{ product.Category_ID }}</td>
+                <td>{{ product.Category_name }}</td>
+                <td>{{ product.Product_Name }}</td>
+                <td>{{ product.Manufacture_date }}</td>
+                <td>{{ product.Expiry_date }}</td>
+                <td>{{ product.Price_per_unit }}</td>
+                <td>{{ product.Stocks }}</td>
+                <td>{{ product.Unit }}</td>
+                <td>
+                    <a href="{{ url_for('edit_product', product_id=product.Product_ID) }}" class="button">Edit</a>
+                    <a href="{{ url_for('delete_product', product_id=product.Product_ID) }}" class="button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('add_product') }}" class="button">Add Product</a>
+</div>
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container justify-content-end">
+        <a href="{{ url_for('order_summary') }}" class="button">Order Summary</a>
+        <a href="{{ url_for('home_page') }}" class="button">Logout</a>
+    </div>
+</nav>
+{% endblock %}

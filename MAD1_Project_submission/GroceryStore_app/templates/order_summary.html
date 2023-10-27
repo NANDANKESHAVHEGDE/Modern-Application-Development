@@ -1,0 +1,29 @@
+{% extends 'base_manager.html' %}
+
+{% block title %}Order Summary{% endblock %}
+
+{% block content %}
+<div class="container">
+    <style>
+        nav {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
+    <div class="graph-container">
+        {% if plot_file %}
+            <img src="{{ plot_file }}" alt="Order Summary" width="800" height="600">
+        {% else %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</div>
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container justify-content-end">
+        <a href="{{ url_for('manager_dashboard') }}" class="button">Manager Dashboard</a>
+        <a href="{{ url_for('home_page') }}" class="button">Logout</a>
+    </div>
+</nav>
+{% endblock %}

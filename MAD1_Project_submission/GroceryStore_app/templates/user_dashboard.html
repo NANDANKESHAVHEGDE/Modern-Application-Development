@@ -1,0 +1,50 @@
+{% extends 'base_user.html' %}
+
+{% block content %}
+
+<!-- user_dashboard.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    {% for category, products in categories.items() %}
+        <h2>{{ category }}</h2>
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Price per unit</th>
+                <th>Stocks Available</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.Product_Name }}</td>
+                <td>{{ product.Price_per_unit }}</td>
+                <td>{{ product.Stocks }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('add_to_cart') }}">
+                        <input type="hidden" name="product_id" value="{{ product.Product_ID }}">
+                        <input type="number" name="quantity" value="0" min="0" max="{{ product.Stocks }}">
+                    </td>
+                    <td><button type="submit">Add to Cart</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container justify-content-end">
+            <a href="{{ url_for('user_cart') }}" class="button">View Cart</a>
+            <a href="{{ url_for('user_profile') }}" class="button">Profile</a>
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        </div>
+    </nav>
+</body>
+</html>
+{% endblock %}
+

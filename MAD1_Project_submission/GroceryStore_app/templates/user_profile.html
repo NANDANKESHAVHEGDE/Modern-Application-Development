@@ -1,0 +1,36 @@
+<!-- user_profile.html -->
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>User Profile</h1>
+
+    <h2>User Information</h2>
+    <p>Username: {{ user.user_name }}</p>
+    <p>Email: {{ user.email_id }}</p>
+
+    <h2>Order History</h2>
+    {% if orders %}
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.order_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>{{ order.product_id.Product_Name }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.total_price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No order history available.</p>
+    {% endif %}
+
+    <a href="{{ url_for('user_dashboard') }}">Back to User Dashboard</a>
+{% endblock %}

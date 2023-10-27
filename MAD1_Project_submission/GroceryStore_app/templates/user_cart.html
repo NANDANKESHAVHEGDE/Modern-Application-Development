@@ -1,0 +1,45 @@
+{% extends 'base_user.html' %}
+
+{% block content %}
+
+<!-- user_cart.html -->
+    <h1>User Cart</h1>
+    {% if cart_data %}
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price per Unit</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+            {% for product, cart_item in cart_data.items() %}
+                <tr>
+                    <td>{{ product.Product_Name }}</td>
+                    <td>
+                        <form action="{{ url_for('user_update_cart_item', cart_item_id=cart_item['cart_item_id']) }}" method="post">
+                            <input type="number" name="quantity" value="{{ cart_item['quantity'] }}" min="1" max="{{ product.Stocks }}" required>
+                            <input type="submit" value="Update">
+                        </form>
+                    </td>
+                    <td>{{ product.Price_per_unit }}</td>
+                    <td>{{ product.Price_per_unit * cart_item['quantity'] }}</td>
+                    <td>
+                        <form action="{{ url_for('user_remove_cart_item', cart_item_id=cart_item['cart_item_id']) }}" method="post">
+                            <input type="submit" value="Remove">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <form action="{{ url_for('user_confirm_order') }}" method="post">
+            <input type="submit" value="Confirm Order">
+        </form>
+        <p>Total Quantity: {{ total_quantity }}</p>
+        <p>Total Price: {{ total_price }}</p>
+
+    {% else %}
+        <p>No items in the cart.</p>
+    {% endif %}
+    <a href="{{ url_for('user_dashboard') }}" class="button">Back to User Dashboard</a>
+{% endblock %}

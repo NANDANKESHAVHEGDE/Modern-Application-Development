@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Product{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Delete Product</h2>
+    <p>Are you sure you want to delete the following product?</p>
+    <table>
+        <tr>
+            <td><strong>Product ID:</strong></td>
+            <td>{{ product.Product_ID }}</td>
+        </tr>
+        <tr>
+            <td><strong>Category ID:</strong></td>
+            <td>{{ product.Category_ID }}</td>
+        </tr>
+        <tr>
+            <td><strong>Category Name:</strong></td>
+            <td>{{ product.Category_name }}</td>
+        </tr>
+        <tr>
+            <td><strong>Product Name:</strong></td>
+            <td>{{ product.Product_Name }}</td>
+        </tr>
+        <tr>
+            <td><strong>Manufacture Date:</strong></td>
+            <td>{{ product.Manufacture_date }}</td>
+        </tr>
+        <tr>
+            <td><strong>Expiry Date:</strong></td>
+            <td>{{ product.Expiry_date }}</td>
+        </tr>
+        <tr>
+            <td><strong>Price per Unit:</strong></td>
+            <td>{{ product.Price_per_unit }}</td>
+        </tr>
+        <tr>
+            <td><strong>Stocks:</strong></td>
+            <td>{{ product.Stocks }}</td>
+        </tr>
+        <tr>
+            <td><strong>Unit:</strong></td>
+            <td>{{ product.Unit }}</td>
+        </tr>
+    </table>
+    <form method="post" action="{{ url_for('delete_product', product_id=product.Product_ID) }}">
+        <div class="form-group">
+            <button type="submit" class="button">Delete Product</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

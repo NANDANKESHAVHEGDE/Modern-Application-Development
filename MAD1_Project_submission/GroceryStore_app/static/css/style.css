@@ -1,0 +1,80 @@
+body {
+font-family: Arial, sans-serif;
+}
+
+.container {
+margin-top: 10px;
+}
+
+.btn-primary {
+background-color: #007bff;
+border-color: #007bff;
+}
+
+.btn-primary:hover {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+
+/* Add a background theme */
+.home-banner {
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('static/images/grocery_home_page.jpg');
+background-size: cover;
+background-position: center;
+height: 100vh;
+color: #fff;
+text-align: center;
+}
+
+/* Center the content vertically */
+.home-banner .align-items-center {
+height: 100%;
+}
+
+/* Style the heading and button */
+.home-banner h1 {
+font-size: 3rem;
+margin-bottom: 20px;
+}
+
+.home-banner .lead {
+font-size: 1.5rem;
+margin-bottom: 30px;
+}
+
+.home-banner .btn-primary {
+background-color: #007bff;
+border-color: #007bff;
+}
+
+.home-banner .btn-primary:hover {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+
+/* Additional beautification */
+.home-banner h1.display-4 {
+font-size: 3.5rem;
+font-weight: bold;
+letter-spacing: 2px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.home-banner .lead {
+font-size: 1.8rem;
+letter-spacing: 1px;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.home-banner .btn-primary {
+font-size: 1.2rem;
+padding: 12px 32px;
+border-radius: 30px;
+text-shadow: none;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-banner img {
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

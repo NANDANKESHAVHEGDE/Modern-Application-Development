@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='images/background_image.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+        nav {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+        .container {
+            max-width: 2000px;
+            margin: 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .intro {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .intro h2 {
+            color: #4CAF50;
+        }
+
+        .registration {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the registration section */
+
+        }
+
+        .registration h3 {
+            color: #4CAF50;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Grocery Store</h1>
+    </header>
+    <nav>
+        <a href="{{ url_for('Manager_login') }}" class="button">Manager Login</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+
+<div>
+    <div id="footer">
+    <h5> Nandan | MAD1 Project | Diploma Level </h5>
+</div>
+
+</html>

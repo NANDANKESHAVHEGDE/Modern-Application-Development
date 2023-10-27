@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Grocery Store{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="intro">
+        <h2>Welcome to Our Grocery Store</h2>
+        <p>
+            At Grocery Store, we are committed to providing you with the freshest and finest quality produce, as well as a wide range of groceries and household essentials. With our easy-to-navigate app, you can shop from the comfort of your home and have your items delivered to your doorstep.
+        </p>
+        <p>
+            Whether you are looking for fresh fruits and vegetables, pantry staples, dairy products, or personal care items, we have got you covered. Our mission is to make your grocery shopping experience convenient, enjoyable, and affordable.
+        </p>
+    </div>
+
+    <div class="registration">
+        <h3>Create an Account</h3>
+        <p>
+            To get started, create a free account and gain access to our user-friendly dashboard. As a registered user, you can explore our vast inventory, add items to your cart, and place orders at your convenience. Sign up now to start shopping with ease!
+        </p>
+        <form method="post" action="{{ url_for('register_user') }}">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <label for="email_id">Email_ID:</label>
+            <input type="email_id" name="email_id" id="email_id" required>
+            <button type="submit" class="button">Register</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+    </div>
+</div>
+{% endblock %}
+
