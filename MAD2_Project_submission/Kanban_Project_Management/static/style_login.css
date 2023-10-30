@@ -1,0 +1,36 @@
+body{
+    background-color: grey;
+}
+.header{
+    background-color: whitesmoke;
+    text-align: center;
+    border: 2px solid black;
+}
+#login-form{
+    transform: scale(1);
+    padding: 10px;
+    text-align: center;  
+    border: 5px solid black;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+th{
+    width: 50%;
+    background-color: goldenrod;
+    border: 1px solid black;
+    text-align: center;
+}
+td{
+    background-color:#096d439a;
+    border: 1px solid black;
+}
+li{
+    margin-bottom: 5px;
+}
+.register-spacing{
+    padding: 10px;
+}
+tr{
+    border: 1px solid black;
+}

@@ -1,0 +1,40 @@
+body{
+    background-color: grey;
+}
+.col_list{
+    float: left;
+    height: 580px;
+    width: 20%;
+    background-color: rgb(9, 124, 128);
+    border: 5px solid black;
+    padding: 0px;
+}
+.lists{
+    border: 2px solid black;
+    background-color: gold;
+    text-align: center;
+    margin: 2px;
+}
+.add_card{
+    text-align: center;
+}
+.add_list{
+    text-align: center;
+    margin-top: 10px;
+}
+.sum_part{
+    background-color:#9BCB3B;
+    border: 2px solid black;
+    margin: 4px;
+}
+.card_ui{
+    height: 160px;
+    overflow-y: scroll;
+    margin: 4px;
+    background-color: #9BCB3B;
+    border: 2px solid black
+}
+img{
+    width: 40%;
+    border: 5px solid goldenrod;
+}
