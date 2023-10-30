@@ -6,7 +6,7 @@ class Config():
     SQLITE_DB_DIR = os.path.join(basedir, "../db_directory")
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(SQLITE_DB_DIR, "kanbanv23_db.sqlite3")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY =  "secet"
+    SECRET_KEY =  "secret"
     SECURITY_PASSWORD_HASH = "bcrypt"    
     SECURITY_PASSWORD_SALT = "really super secret" 
     SECURITY_REGISTERABLE = True

@@ -3,7 +3,7 @@ from email.message import EmailMessage
 
 SMPTP_SERVER_HOST = "localhost"
 SMPTP_SERVER_PORT = 1025
-SENDER_ADDRESS = "testemail@alape.com"
+SENDER_ADDRESS = "testemail@nandu.com"
 SENDER_PASSWORD = ""
 
 def mail_report(email,username,filename):
